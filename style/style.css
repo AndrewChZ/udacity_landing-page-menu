@@ -1,0 +1,12 @@
+
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Responsive Main CSS (for desktop) */
+@import "main.css";
+
+/* Responsive Tablet CSS (for tablet) */
+@import "tablet.css";
+
+/* Responsive Mobile CSS (for mobile) */
+@import "mobile.css";

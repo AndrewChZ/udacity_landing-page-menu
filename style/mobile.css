@@ -1,0 +1,135 @@
+/****************************************************************************************
+*****************************************************************************************
+*****                 Responsive Media Queries (600px and below)
+*****************************************************************************************
+****************************************************************************************/
+
+@media only screen and (max-width: 780px) {
+    .image-featured {
+        width: 280px;
+        height: 293px;
+        background-image: url(../img/blog-img_header-small.jpg);
+    }
+
+    .blog-title-info {
+        width: 280px;
+    }
+
+    /* Blog post: Change the related post's card image size. Am using another css selector because of the specificity tag above.  */
+    .related-posts-group > .blog-post > a > img,
+    .container-blog-posts-group > .blog-post > a > .blog-image {
+        width: 280px;
+        height: 320px;
+    }
+
+    /* Change the featured post's title from H1 to H4 */
+    .blog-title-info > h1 {
+        font-family: Georgia;
+        font-size: 16px;
+        font-weight: 400;
+        color: #000000;
+    }
+
+    /* Blog post: change the padding of the blog post white BG */
+    .post-content {
+        padding: 12px;
+    }
+
+    /* Blog post: Change the dimension of the blog post's image */
+    figure > img {
+        width: 262px;
+        height: 146px;
+    }
+
+    /* Blog post: Change the width of the blog post's image width */
+    figcaption {
+        width: 262px;
+    }
+    
+    /* Container for the entire content group includ post, author and related posts */
+    .container-post-content-group {
+        width: 286px;
+        margin: 40px auto 40px auto;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 286px;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "one"
+            "two"
+            "four"
+    }
+
+
+    .related-posts-group > div:nth-child(3),
+    .related-posts-group > div:nth-child(4) {
+        display: block;
+    }
+
+    /* Homepage: blog post title */
+    .container-blog-posts-group {
+        width: 280px;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 280px;
+        grid-template-rows: 403px;
+    }
+
+    /* Limiting the width of the featured post title */
+    .post-page-title {
+        width: 286px;
+    }
+
+    /* Container for the related posts only */
+    .related-posts-group {
+        width: 280px;
+        grid-template-columns: 280px;
+        grid-template-rows: 403px;
+    }
+
+    /* blog post: change caption styling */
+    .image-caption {
+        width: 262px;
+    }
+}
+
+/* Previous codes */
+
+/* .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: 100px 100px 1fr;
+    grid-template-rows: 150px 400px 50px;
+    grid-template-areas:
+    "hd hd hd hd hd hd hd"
+    "sd sd ct ct ct ct ct"
+    "ft ft ft ft ft ft ft";
+    border: 2px solid yellsow;   
+}
+
+.box {
+    background: white;
+    border: 1px solid red;
+}
+
+.header {
+    grid-area: hd;
+}
+
+.sidebar {
+    grid-area: sd;
+}
+
+.content {
+    grid-area: ct;
+    background-image: url('../img/waterfall.jpeg');
+    background-size: stretch;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    grid-area: ft;
+}
+ */
