@@ -7,21 +7,31 @@
 /*                 Headings                     */
 /************************************************/
 
+
+
+/************************************************/
+/*                 Headings                     */
+/************************************************/
+
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
 h1 {
+    font-weight: 700;
     font-size: 88px;
     color: #EDF2F4;
 }
 
 h2 {
+    font-weight: 400;
     font-size: 40px;
     color: #EF233C;
 }
 
 h3 {
+    font-weight: 400;
+    letter-spacing: 0.5px;
     font-size: 24px;
     color: #EDF2F4;
 }
@@ -36,10 +46,6 @@ body {
 header {
     width: 100%;
     position: relative;
-}
-
-hr {
-    margin: 
 }
 
 /************************************************/
@@ -91,17 +97,76 @@ hr {
 }
 
 .dish-stats {
-    margin: 0 48px;
+    margin: 0 24px;
+}
+
+.dish-stats h3 {
+    margin: 16 0 0 0px;
+}
+
+.dish-stats p {
+    margin: 8 0 24 0px;
 }
 
 .dish-stats:first-child {
     margin: 0 48 0 0;
 }
 
+.header-text:last-child {
+    margin-bottom: 40px
+}
+
+/************************************************/
+/*             CSS for body content              */
+/************************************************/
+
+figure {
+    width: 50%;
+    margin: 0;
+}
+
+figure ul {
+    margin-top: 0;
+}
+
+figcaption {
+    font-weight: 700;
+}
+
+.content-section {
+    padding: 40 0;
+    width: 755px;
+    margin: auto;
+}
+
+.even-section {
+    background-color: #EDF2F4;
+}
+
+.review {
+    text-align: center;
+    /* display: flex; */
+}
+
+.review h2 {
+    display: none;
+}
+
+.review div:last-child {
+    margin-left: 16px
+}
+
+.ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /************************************************/
 /*                    Buttons                    */
 /************************************************/
 
+.button_dont-like-recipe,
+.button_like-recipe,
 .button_save-recipe {
     display: inline-flex;
     flex-direction: row;
@@ -110,9 +175,17 @@ hr {
     padding: 12px;
     height: 48px;
     line-height: 0px;
-    background-color: #EF233C;
     color: #EDF2F4;
-    /* vertical-align: middle; */
+}
+
+.button_dont-like-recipe,
+.button_save-recipe {
+    background-color: #EF233C;
+    margin: 0px;
+}
+
+.button_like-recipe {
+    background-color: #4CC4D4;
     margin: 0px;
 }
 
