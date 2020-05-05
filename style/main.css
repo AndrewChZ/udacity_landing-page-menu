@@ -4,16 +4,50 @@
 }
 
 /************************************************/
+/*                 Nav Bar                     */
+/************************************************/
+
+nav {
+    /* display: none; */
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 50;
+    /* top: -100px; */
+    /* height: 100px; */
+    background-image: linear-gradient(to top, rgba(43, 45, 66, 1), rgba(43, 45, 66, 0.53)), url("../img/nasilemak_bw.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 40 0;
+}
+
+nav ul li {
+    margin: 0 16;
+}
+
+nav h4 {
+    margin: 40 0 16 0;
+}
+
+#focused a {
+    font-weight: 700;
+    color: #EDF2F4;
+}
+
+/************************************************/
 /*                 Headings                     */
 /************************************************/
 
-
-
-/************************************************/
-/*                 Headings                     */
-/************************************************/
-
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
 }
 
@@ -36,7 +70,18 @@ h3 {
     color: #EDF2F4;
 }
 
-body {
+h4 {
+    font-weight: 400;
+    color: #EDF2F4;
+    font-size: 24px;
+}
+
+/************************************************/
+/*          Other HTML semantics                */
+/************************************************/
+
+body,
+a {
     font-family: 'Source Sans Pro', sans-serif;
     color: #8D99AE;
     line-height: 24px;
@@ -46,6 +91,10 @@ body {
 header {
     width: 100%;
     position: relative;
+}
+
+a {
+    text-decoration: none;
 }
 
 /************************************************/
