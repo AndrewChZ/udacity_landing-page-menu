@@ -4,23 +4,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     </head>
     <body>
-        <img src="img/nasilemak.png">
-        <h1>Nasi Lemask</h1>
-        <div class="dish-stats-group">
-            <div class="dish-stats">
-                <h3>Recipe Rating</h3>
-                <p>86% likes <br>(5,302 ratings)</p>
+        <header>
+            <div id="header-image"></div>
+            <div class="header-text content-grid">
+                <div class="dish-name">
+                    <h1>Nasi Lemak</h1>
+                    <div class="dish-name-border"></div>
+                </div>
+                <div class="dish-stats-group">
+                    <div class="dish-stats">
+                        <h3>Recipe Rating</h3>
+                        <p>86% likes <br>(5,302 ratings)</p>
+                    </div>
+                    <div class="dish-stats">
+                        <h3>Time</h3>
+                        <p>1 hr 20 mins</p>
+                    </div>
+                    <div class="dish-stats">
+                        <h3>Serves</h3>
+                        <p>4 pax</p>
+                    </div>
+                </div>
+                <div class="button_save-recipe"><img src="img/icn_bookmark.svg" width="24px" height="24px">Save this recipe</div>
             </div>
-            <div class="dish-stats">
-                <h3>Time</h3>
-                <p>1 hr 20 mins</p>
-            </div>
-            <div class="dish-stats">
-                <h3>Serves</h3>
-                <p>4 pax</p>
-            </div>
-            <div class="button_save-recipe">Save this recipe</div>
-        </div>
+        </header>
         <div class="content-section">
             <h2>An Introduction</h2>
             <p>Nasi lemak is a Malay fragrant rice dish cooked in coconut milk and pandan leaf. It is commonly found in Malaysia, where it is considered the national dish; it is also the native dish in neighbouring areas with significant Malay populations such as Singapore; Brunei, and Southern Thailand.</p>
@@ -84,8 +91,8 @@
         <div class="content-section even-section review">
             <h2>Review</h2>
             <p>Do you like this recipe?</p>
-            <div class="button_like-recipe">Yes!</div>
-            <div class="button_dont-like-recipe">No...</div>
+            <div class="button_like-recipe"><img src="img/icn_thumbsUp.svg" width="24px" height="24px">Yes!</div>
+            <div class="button_dont-like-recipe"><img src="img/icn_thumbsDown.svg" width="24px" height="24px">No...</div>
         </div>
         <script src="js/script.js"></script>
     </body>

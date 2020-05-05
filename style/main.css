@@ -1,11 +1,121 @@
 * {
     box-sizing: border-box;
+    /* background-color: black; */
 }
+
+/************************************************/
+/*                 Headings                     */
+/************************************************/
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
 }
 
+h1 {
+    font-size: 88px;
+    color: #EDF2F4;
+}
+
+h2 {
+    font-size: 40px;
+    color: #EF233C;
+}
+
+h3 {
+    font-size: 24px;
+    color: #EDF2F4;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    color: #8D99AE;
+    line-height: 24px;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    position: relative;
+}
+
+hr {
+    margin: 
+}
+
+/************************************************/
+/*           CSS for classes and IDs           */
+/************************************************/
+
+#header-image {
+    width: 100%;
+    height: 640px;
+    background-image: linear-gradient(to top, rgba(43, 45, 66, 1), rgba(43, 45, 66, 0)), url("../img/nasilemak.png");
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-size: cover;
+}
+
+.header-text {
+    position: absolute;
+    width: 755px;
+    /* text-align: center; */
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    bottom: 0px;
+}
+
+.content-grid {
+    /* width: 755px; */
+    margin: 0 auto;
+}
+
+.dish-name {
+    display: inline-block;
+}
+
+.dish-name h1 {
+    margin-bottom: 48px;
+}
+
+.dish-name-border {
+    width: 88%;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+}
+
+.dish-stats-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.dish-stats {
+    margin: 0 48px;
+}
+
+.dish-stats:first-child {
+    margin: 0 48 0 0;
+}
+
+/************************************************/
+/*                    Buttons                    */
+/************************************************/
+
+.button_save-recipe {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    padding: 12px;
+    height: 48px;
+    line-height: 0px;
+    background-color: #EF233C;
+    color: #EDF2F4;
+    /* vertical-align: middle; */
+    margin: 0px;
+}
+
+.button_save-recipe img {
+    margin: 0 4 0 0;
 }
