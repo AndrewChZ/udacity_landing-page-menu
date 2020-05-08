@@ -9,7 +9,7 @@
 /************************************************/
 
 nav {
-    display: none;
+    /* display: none; */
     position: fixed;
     top: 0px;
     width: 100%;
@@ -38,7 +38,7 @@ nav h4 {
     margin: 40 0 16 0;
 }
 
-#focused a {
+.focused a {
     font-weight: 700;
     color: #EDF2F4;
 }
@@ -307,15 +307,15 @@ figcaption {
 
     /************** For Nav bar  **************/
 
-    nav ul li:not(#focused):not(#next):not(#previous) {
+    nav ul li:not(.focused):not(.next):not(.previous) {
         display: none;
     }
 
-    #previous {
+    .previous {
         margin-left: 0;
     }
 
-    #next {
+    .next {
         margin-right: 0;
     }
 
