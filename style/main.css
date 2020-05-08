@@ -9,6 +9,7 @@
 /************************************************/
 
 nav {
+    display: none;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -194,7 +195,8 @@ figcaption {
     /* display: flex; */
 }
 
-.review h2 {
+.review h2,
+#header-overview {
     display: none;
 }
 
