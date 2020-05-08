@@ -13,6 +13,7 @@
 //     });
 // });
 
+
 function scrollToSection(evt) {
     evt.preventDefault();
     console.log(`You've just clicked ${evt.target.textContent}`);
