@@ -8,13 +8,10 @@
 /************************************************/
 
 nav {
-    /* display: none; */
     position: fixed;
     top: 0px;
     width: 100%;
     z-index: 50;
-    /* top: -100px; */
-    /* height: 100px; */
     background-image: linear-gradient(to top, rgba(43, 45, 66, 1), rgba(43, 45, 66, 0.53)), url("../img/nasilemak_bw.png");
     background-position: center;
     background-size: cover;
@@ -22,12 +19,13 @@ nav {
 }
 
 nav ul {
+    max-width: 755px;
     display: flex;
     list-style-type: none;
     flex-direction: row;
     justify-content: center;
     padding: 0;
-    margin: 0 0 40 0;
+    margin: 0 auto 40 auto;
 }
 
 nav ul li {
@@ -106,7 +104,6 @@ a {
     width: 100%;
     height: 640px;
     background-image: linear-gradient(to top, rgba(43, 45, 66, 1), rgba(43, 45, 66, 0)), url("../img/nasilemak.png");
-    /* background-repeat: no-repeat; */
     background-position: center;
     background-size: cover;
 }
@@ -114,7 +111,6 @@ a {
 .header-text {
     position: absolute;
     width: 755px;
-    /* text-align: center; */
     left: 0;
     right: 0;
     margin: auto;
@@ -123,7 +119,6 @@ a {
 }
 
 .content-grid {
-    /* width: 755px; */
     margin: 0 auto;
 }
 
@@ -272,13 +267,12 @@ figcaption {
         width: 80%;
     }
     
+/************** For dish stats  **************/
+
     .dish-stats,
     .dish-stats:first-child {
         display: flex;
         flex-direction: row;
-        /* align-items: flex-start; */
-        /* align-content: space-between; */
-        /* justify-content: space-between; */
         margin: 0;
     }
 
@@ -306,5 +300,28 @@ figcaption {
 
     .dish-stats-group {
         flex-direction: column;
+    }
+
+    /************** For Nav bar  **************/
+
+    nav ul li:not(#focused):not(#next):not(#previous) {
+        display: none;
+    }
+
+    #previous {
+        margin-left: 0;
+    }
+
+    #next {
+        margin-right: 0;
+    }
+
+    nav h4 {
+        margin: 16 0 8 0;
+    }
+
+    nav ul {
+        margin: 0 0 16 0;
+        justify-content: space-around;
     }
 }
