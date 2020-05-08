@@ -49,11 +49,22 @@ window.addEventListener('scroll', function() {
     if(listOfHeaders[0].getBoundingClientRect().top < listOfHeaders[1].getBoundingClientRect().top
         && listOfHeaders[1].getBoundingClientRect().top > 200
     ) {
-        console.log(`The header ${listOfHeaders[0].textContent} should be highlighted`);
+        console.log(`0. ${listOfHeaders[0].textContent} should be highlighted`);
+    } else if (listOfHeaders[1].getBoundingClientRect().top > 0 
+                && listOfHeaders[1].getBoundingClientRect().top < listOfHeaders[2].getBoundingClientRect().top) {
+        console.log(`1. ${listOfHeaders[1].textContent} should be highlighted`);
+    } else if (listOfHeaders[2].getBoundingClientRect().top > 0 
+                && listOfHeaders[2].getBoundingClientRect().top < listOfHeaders[3].getBoundingClientRect().top) {
+        console.log(`2. ${listOfHeaders[2].textContent} should be highlighted`);
+    } else if (listOfHeaders[3].getBoundingClientRect().top > 0 
+                && listOfHeaders[3].getBoundingClientRect().top < listOfHeaders[4].getBoundingClientRect().top) {
+        console.log(`3. ${listOfHeaders[3].textContent} should be highlighted`);
+    } else if (listOfHeaders[4].getBoundingClientRect().top > 0 
+                && listOfHeaders[4].getBoundingClientRect().top < listOfHeaders[5].getBoundingClientRect().top) {
+        console.log(`4. ${listOfHeaders[4].textContent} should be highlighted`);
     } else {
-        console.log(`I can't determine which should be highlighted`)
+        console.log(`!! I can't determine which should be highlighted !!`);
     }
-
 });
 
 // This version only runs the function once
