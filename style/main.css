@@ -54,6 +54,7 @@ h1, h2, h3, h4 {
 h1 {
     font-weight: 700;
     font-size: 88px;
+    line-height: 72px;
     color: #EDF2F4;
 }
 
@@ -131,7 +132,7 @@ a {
 }
 
 .dish-name h1 {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
 
 .dish-name-border {
@@ -240,4 +241,70 @@ figcaption {
 
 .button_save-recipe img {
     margin: 0 4 0 0;
+}
+
+
+/************************************************/
+/*           Media Queries - Tablet            */
+/************************************************/
+
+@media only screen and (max-width: 834px) {
+    .content-section {
+        width: 549px;
+    }
+
+    .header-text {
+        width: 549px;
+    }
+}
+
+/************************************************/
+/*           Media Queries - Mobile            */
+/************************************************/
+
+@media only screen and (max-width: 720px) {
+    
+    .content-section {
+        width: 80%;
+    }
+
+    .header-text {
+        width: 80%;
+    }
+    
+    .dish-stats,
+    .dish-stats:first-child {
+        display: flex;
+        flex-direction: row;
+        /* align-items: flex-start; */
+        /* align-content: space-between; */
+        /* justify-content: space-between; */
+        margin: 0;
+    }
+
+    .dish-stats {
+        margin: 8 0;
+    }
+
+    .dish-stats:first-child {
+        margin: 16 0 8 0;
+    }
+
+    .dish-stats:last-child {
+        margin: 8 0 16 0;
+    }
+
+    .dish-stats h3 {
+        font-size: 16px;
+        margin: 0 16 0 0;
+        width: 30%;
+    }
+
+    .dish-stats p {
+        margin: 0;
+    }
+
+    .dish-stats-group {
+        flex-direction: column;
+    }
 }
