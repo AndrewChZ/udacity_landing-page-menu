@@ -2,7 +2,7 @@ let listOfHeaders = document.querySelectorAll("h2");
 createNav();
 let listOfNavLi = document.querySelectorAll("nav ul li");
 
-
+// Dynamically creates the nav
 function createNav() {
     let fragment = document.createDocumentFragment();
     let navTitle = [];
