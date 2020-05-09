@@ -1,33 +1,33 @@
 let listOfHeaders = document.querySelectorAll("h2");
+createNav();
 let listOfNavLi = document.querySelectorAll("nav ul li");
 
-// // V1: Create the Nav dynamically using an array
-// function createNav() {
-//     let fragment = document.createDocumentFragment();
-//     let navTitle = [];
 
-//     // Use the headers to populate build the string for 
-//     for (i = 0; i < listOfHeaders.length; i++) {
-//         navTitle[i] = listOfHeaders[i].innerHTML
-//     }
-//     return navTitle;
-// }
-
-// V2: Create the Nav dynamically using an array object
 function createNav() {
     let fragment = document.createDocumentFragment();
     let navTitle = [];
-    
+    let liItems;
 
     // Use the headers to populate build the string for 
     for (i = 0; i < listOfHeaders.length; i++) {
         let navhref;
-        navhref = "#" + listOfHeaders[i].innerHTML.toLowerCase().replace(/\s/g, ' ');
+        navhref = "#header-" + listOfHeaders[i].innerHTML.toLowerCase().replace(/\s/g, '');
         navTitle[i] = {content: listOfHeaders[i].innerHTML,
                         href: navhref};
     }
     // return navTitle;
-    console.log(navTitle[0].content);
+
+    for (i = 0; i < listOfHeaders.length; i++) {
+        liItems = document.createElement(`li`);
+        liItems.innerHTML = `<a href=${navTitle[i].href}>${navTitle[i].content}</a>`
+        fragment.appendChild(liItems);
+        // <li><a href="#header-overview">Overview</a></li>
+    }
+    // console.log(`The navTitle length is ${navTitle.length}`);
+    // console.log(`The listOfHeaders length is ${listOfHeaders.length}`);
+    // console.log(`----- HTML Fragment below -----`);
+    console.log(fragment);
+    document.querySelector("nav ul").appendChild(fragment);
 }
 
 // Does a smooth scroll to the selected destination. Disables the default behaviour.
