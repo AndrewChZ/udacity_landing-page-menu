@@ -1,8 +1,37 @@
 let listOfHeaders = document.querySelectorAll("h2");
 createNav();
+colourAlternateSections();
+listOfHeaders = document.querySelectorAll("h2"); // The value for listOfHeaders is redefined because the DOM was manipulated with new nodes to highlight the odd sections
 let listOfNavLi = document.querySelectorAll("nav ul li");
 
-// Dynamically creates the nav
+
+function colourAlternateSections() {
+    let listOfContentSection = document.getElementsByClassName("content-section");
+
+    for (i = 0; i < listOfContentSection.length; i++) {
+        if (isEven(i) == false) {
+            // let oldParentNode = listOfContentSection[i].parentNode;
+            let newParentNode = document.createElement("div");
+            newParentNode.className = "even-section";
+            let newParentNodeContent = listOfContentSection[i].cloneNode(true);
+            newParentNode.appendChild(newParentNodeContent);
+            listOfContentSection[i].parentNode.replaceChild(newParentNode, listOfContentSection[i]);
+            console.log(newParentNode);
+        }
+    }
+
+    console.log(listOfContentSection.length);
+}
+
+// Checks if the provided argument is true
+function isEven(value) {
+	if (value%2 == 0)
+		return true;
+	else
+		return false;
+}
+
+// Dynamically creates
 function createNav() {
     let fragment = document.createDocumentFragment();
     let navTitle = [];
@@ -26,7 +55,7 @@ function createNav() {
     // console.log(`The navTitle length is ${navTitle.length}`);
     // console.log(`The listOfHeaders length is ${listOfHeaders.length}`);
     // console.log(`----- HTML Fragment below -----`);
-    console.log(fragment);
+    // console.log(fragment);
     document.querySelector("nav ul").appendChild(fragment);
 }
 
