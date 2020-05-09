@@ -1,6 +1,36 @@
+let listOfHeaders = document.querySelectorAll("h2");
+createNav();
+let listOfNavLi = document.querySelectorAll("nav ul li");
 
+// Dynamically creates the nav
+function createNav() {
+    let fragment = document.createDocumentFragment();
+    let navTitle = [];
+    let liItems;
 
+    // Use the headers to populate build the string for 
+    for (i = 0; i < listOfHeaders.length; i++) {
+        let navhref;
+        navhref = "#header-" + listOfHeaders[i].innerHTML.toLowerCase().replace(/\s/g, '');
+        navTitle[i] = {content: listOfHeaders[i].innerHTML,
+                        href: navhref};
+    }
+    // return navTitle;
 
+    for (i = 0; i < listOfHeaders.length; i++) {
+        liItems = document.createElement(`li`);
+        liItems.innerHTML = `<a href=${navTitle[i].href}>${navTitle[i].content}</a>`
+        fragment.appendChild(liItems);
+        // <li><a href="#header-overview">Overview</a></li>
+    }
+    // console.log(`The navTitle length is ${navTitle.length}`);
+    // console.log(`The listOfHeaders length is ${listOfHeaders.length}`);
+    // console.log(`----- HTML Fragment below -----`);
+    console.log(fragment);
+    document.querySelector("nav ul").appendChild(fragment);
+}
+
+// Does a smooth scroll to the selected destination. Disables the default behaviour.
 function scrollToSection(evt) {
     evt.preventDefault();
     console.log(`You've just clicked ${evt.target.textContent}`);
@@ -18,8 +48,7 @@ function scrollToSection(evt) {
 
 document.querySelector("nav").addEventListener('click', scrollToSection);
 
-let listOfHeaders = document.querySelectorAll("h2");
-let listOfNavLi = document.querySelectorAll("nav ul li");
+
 
 
 
