@@ -18,6 +18,9 @@ nav {
     background-position: center;
     background-size: cover;
     text-align: center;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.1s;
 }
 
 nav ul {
