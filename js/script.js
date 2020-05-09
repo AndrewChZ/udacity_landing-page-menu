@@ -1,17 +1,4 @@
-// console.log("hello world!");
 
-// let finalContent = "";
-// let reviewContent = "";
-
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-
-//         document.querySelector(this.getAttribute('href')).scrollIntoView({
-//             behavior: 'smooth'
-//         });
-//     });
-// });
 
 
 function scrollToSection(evt) {
@@ -42,14 +29,6 @@ function reportHeaderDistanceToTop(x) {
     return;
 }
 
-// To compare which element should be highlighted based on the arguments
-// function compareDistance(x, y) {
-//     let xTop = listOfHeaders[0].parentNode.getBoundingClientRect().top;
-//     let yTop = listOfHeaders[1].parentNode.getBoundingClientRect().top;
-//     if ( xTop > 0 && xTop < yTop) {
-//         console.log(`The header ${listOfHeaders[0].textContent} should be highlighted`);
-//     }
-// }
 
 window.addEventListener('scroll', function() {
     // If the first item should be selected
@@ -58,6 +37,10 @@ window.addEventListener('scroll', function() {
     {
         listOfNavLi[0].className= "focused";
         listOfNavLi[1].className= "next";
+        listOfNavLi[2].className= "hide";
+        listOfNavLi[3].className= "hide";
+        listOfNavLi[4].className= "hide";
+        listOfNavLi[5].className= "hide";
         console.log(`0. ${listOfHeaders[0].textContent} should be highlighted`);
     // If the second item should be selected
     } else if (listOfHeaders[1].getBoundingClientRect().top > 0 
@@ -65,30 +48,36 @@ window.addEventListener('scroll', function() {
         listOfNavLi[0].className= "previous";
         listOfNavLi[1].className= "focused";
         listOfNavLi[2].className= "next";
+        listOfNavLi[3].className= "hide";
+        listOfNavLi[4].className= "hide";
+        listOfNavLi[5].className= "hide";
         console.log(`1. ${listOfHeaders[1].textContent} should be highlighted`);
     // If the third item should be selected
     } else if (listOfHeaders[2].getBoundingClientRect().top > 0 
                 && listOfHeaders[2].getBoundingClientRect().top < listOfHeaders[3].getBoundingClientRect().top) {
-        listOfNavLi[0].className= " ";
+        listOfNavLi[0].className= "hide";
         listOfNavLi[1].className= "previous";
         listOfNavLi[2].className= "focused";
         listOfNavLi[3].className= "next";
+        listOfNavLi[4].className= "hide";
+        listOfNavLi[5].className= "hide";
         console.log(`2. ${listOfHeaders[2].textContent} should be highlighted`);
     // If the fourth item should be selected
     } else if (listOfHeaders[3].getBoundingClientRect().top > 0 
                 && listOfHeaders[3].getBoundingClientRect().top < listOfHeaders[4].getBoundingClientRect().top) {
-        listOfNavLi[0].className= " ";
-        listOfNavLi[1].className= " ";
+        listOfNavLi[0].className= "hide";
+        listOfNavLi[1].className= "hide";
         listOfNavLi[2].className= "previous";
         listOfNavLi[3].className= "focused";
         listOfNavLi[4].className= "next";
+        listOfNavLi[5].className= "hide";
         console.log(`3. ${listOfHeaders[3].textContent} should be highlighted`);
     // If the fifth item should be selected
     } else if (listOfHeaders[4].getBoundingClientRect().top > 0 
                 && listOfHeaders[4].getBoundingClientRect().top < listOfHeaders[5].getBoundingClientRect().top) {
-        listOfNavLi[0].className= " ";
-        listOfNavLi[1].className= " ";
-        listOfNavLi[2].className= " ";
+        listOfNavLi[0].className= "hide";
+        listOfNavLi[1].className= "hide";
+        listOfNavLi[2].className= "hide";
         listOfNavLi[3].className= "previous";
         listOfNavLi[4].className= "focused";
         listOfNavLi[5].className= "next";
@@ -98,23 +87,3 @@ window.addEventListener('scroll', function() {
         console.log(`!! I can't determine which should be highlighted !!`);
     }
 });
-
-// This version only runs the function once
-// window.addEventListener('scroll', reportHeaderDistanceToTop(1))
-
-// window.addEventListener('scroll', function() {
-// 	let element = document.querySelector('#header-introduction');
-//     let position = element.getBoundingClientRect();
-
-//     console.log(position.top);
-
-// 	// checking whether fully visible
-// 	if(position.top >= 0 && position.bottom <= window.innerHeight) {
-// 		console.log('Element is fully visible in screen');
-// 	}
-
-// 	// checking for partial visibility
-// 	if(position.top < window.innerHeight && position.bottom >= 0) {
-// 		console.log('Element is partially visible in screen');
-// 	}
-// });
