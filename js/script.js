@@ -79,6 +79,23 @@ createNav();
 colourAlternateSections();
 listOfHeaders = document.querySelectorAll("h2"); // The value for listOfHeaders is redefined because the DOM was manipulated with new nodes to highlight the odd sections
 let listOfNavLi = document.querySelectorAll("nav ul li");
+let lastScrollTop = 0;
+
+// Got this reference from SO "detecting scroll directions" https://stackoverflow.com/a/31223774
+window.addEventListener("scroll", function(){
+   let st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+   console.log(`--------------------------`);
+   console.log(`st is ${st}`);
+   console.log(`Distance to first header's top is ${listOfHeaders[1].getBoundingClientRect().top}`);
+   console.log(`--------------------------`);
+    //If user is scrolling down AND the first header comes into view
+   if (st > lastScrollTop){
+        document.querySelector("nav").style.opacity = 0; 
+   } else {
+        document.querySelector("nav").style.opacity = 1;
+   }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
 
 function shuffleContent() {
     let contentSectionGroup = document.querySelector(".content-section-group");
