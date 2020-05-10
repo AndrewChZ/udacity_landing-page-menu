@@ -20,7 +20,7 @@ nav {
     text-align: center;
     opacity: 1;
     transition-property: opacity;
-    transition-duration: 0.1s;
+    transition-duration: 0.4s;
 }
 
 nav ul {
