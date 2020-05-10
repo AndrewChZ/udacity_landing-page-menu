@@ -1,3 +1,4 @@
+// An array holding all the possible content for the page, which will be randomly scrambled later
 let possibleContent = [
     `
     <div class="content-section"><h2 id="header-regionalvariations">Regional Variations</h2>
@@ -73,13 +74,13 @@ let possibleContent = [
     `
 ];
 
-shuffleContent()
-let listOfHeaders = document.querySelectorAll("h2");
-createNav();
-colourAlternateSections();
+shuffleContent(); //runs the function to shuffle the content
+let listOfHeaders = document.querySelectorAll("h2"); //this variable holds all h2 which will be used to generate the nav
+createNav(); //nav is generated based on the h2 in the content sections
+colourAlternateSections(); //function to colour all the odd content sections
 listOfHeaders = document.querySelectorAll("h2"); // The value for listOfHeaders is redefined because the DOM was manipulated with new nodes to highlight the odd sections
-let listOfNavLi = document.querySelectorAll("nav ul li");
-let lastScrollTop = 0;
+let listOfNavLi = document.querySelectorAll("nav ul li"); //This holds all the <li> item in the nav which is used to help highlight the active section
+let lastScrollTop = 0; //A variable used in detecting scroll direction
 
 // Got this reference from SO "detecting scroll directions" https://stackoverflow.com/a/31223774
 window.addEventListener("scroll", function(){
@@ -122,15 +123,7 @@ function shuffle(array) {
     return array;
 }
 
-function checkIfArrayIsCompletelyEmpty(x) {
-    for (i = 0; i < x.length; i++) {
-        if (x[i].length == false) { //If this particular array has a valid content inside
-            return false;
-        }
-    } 
-    return true;
-}
-
+// Colours alternate content section
 function colourAlternateSections() {
     let listOfContentSection = document.getElementsByClassName("content-section");
 
@@ -157,7 +150,7 @@ function isEven(value) {
 		return false;
 }
 
-// Dynamically creates
+// Dynamically creates the nav based on the headers in the content sections
 function createNav() {
     let fragment = document.createDocumentFragment();
     let navTitle = [];
@@ -201,11 +194,8 @@ function scrollToSection(evt) {
     }  
 }
 
+// Adds the function which enables a smooth scroll when user clicks on the nav
 document.querySelector("nav").addEventListener('click', scrollToSection);
-
-
-
-
 
 // Reports the distance to the top of the document for the specified section
 function reportHeaderDistanceToTop(x) {
@@ -213,11 +203,11 @@ function reportHeaderDistanceToTop(x) {
     return;
 }
 
-
+// This determines which section should be highlighted
 window.addEventListener('scroll', function() {
     // If the first item should be selected
     if(listOfHeaders[0].getBoundingClientRect().top < listOfHeaders[1].getBoundingClientRect().top
-        && listOfHeaders[1].getBoundingClientRect().top > 200) 
+        && listOfHeaders[1].getBoundingClientRect().top > 200)
     {
         listOfNavLi[0].className= "focused";
         listOfNavLi[1].className= "next";
