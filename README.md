@@ -8,5 +8,8 @@ A dynamically generated recipe page about Nasi Lemak, a popular Malay delicacy.
 - Menu hides itself when user is reading for a cleaner interface. It reappears when user scrolls up.
 - Is responsive. Works across Desktop, Tablet and Mobile.
 
+### Demo
+![Landing Page Menu](img/demo.gif)
+
 ### Created by
 Andrew Chen, for Udacity Front End Development Nanodegree, Assignment 2
